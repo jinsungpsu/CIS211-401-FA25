@@ -3,8 +3,24 @@ public class LinkedList<T> {
     private int count = 0;
 
     public void add(T item) {
+        // special case
+        // if list is empty
         Node node = new Node(item, null);
-        head = node;
+        if (head == null) {
+            head = node;
+        } else {
+            Node itr = head; // itr, short for iterator
+
+            // the condition needed here is:
+            // keep going (or iterating)
+            // until I've reached the tail
+            while (itr.next != null) {
+                itr = itr.next;
+            }
+
+            Node tail = itr;
+            tail.next = node;
+        }
         count++;
     }
 
