@@ -1,0 +1,31 @@
+      case 1: remove from front half/"closer" to front
+        front = 0, back = 9
+        1 2 3 4 5 6 7 8 9 10
+        remove(3) - removes value 4
+        should result in
+        x 1 2 3 5 6 7 8 9 10
+        new values: front = 1, back = 9
+
+        case 2: remove from back half/"closer" to front
+        front = 5, back = 4
+        6 7 8 9 10 1 2 3 4 5
+        remove(3) - removes value 4
+        should result in
+        6 7 8 9 10 x 1 2 3 5
+        new values: front = 6, back = 4
+
+        case 3: remove from front half/"closer" to back
+        front = 5, back = 4
+        6 7 8 9 10 1 2 3 4 5
+        remove(8) - removes value 9
+        should result in
+        6 7 8 10 x 1 2 3 4 5
+        new values: front = 6, back = 3
+
+        case 4: remove from front half/"closer" to back
+        front = 0, back = 9
+        1 2 3 4 5 6 7 8 9 10
+        remove(8) - removes value 9
+        should result in
+        1 2 3 4 5 6 7 8 10 x
+        new values: front = 1, back = 9
